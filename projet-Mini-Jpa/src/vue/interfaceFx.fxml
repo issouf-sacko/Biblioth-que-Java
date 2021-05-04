@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<GridPane maxWidth="500.0" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.Controleur">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3">
+         <children>
+            <Label text="Auteur">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label text="Livre">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="200.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <children>
+            <ListView fx:id="lesAuteur" onMouseClicked="#afficherLiveUnAuteur" prefHeight="139.0" prefWidth="167.0">
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </ListView>
+            <ListView fx:id="lesLivres" onMouseClicked="#SelectLivreQrCode" prefHeight="139.0" prefWidth="299.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ListView>
+         </children>
+      </HBox>
+      <Label text="Livre selectionner: " GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Supprimer le livre selectionné" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#supprimerLivre" prefWidth="72.0" text="Supprimer" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="60.0" right="50.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="Génerer un QRCODE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#genererQrCode" prefWidth="72.0" text="Créer" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="60.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="Ajouter un auteur  :" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#ajouterAuteur" prefWidth="72.0" text="Ajouter" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="60.0" />
+         </GridPane.margin>
+      </Button>
+      <GridPane GridPane.columnSpan="3" GridPane.rowIndex="7" GridPane.rowSpan="5">
+         <children>
+            <Label text="Ajouter livre :" GridPane.columnSpan="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="42.0" text="ISBN :" GridPane.rowIndex="1" />
+            <Label text="Titre :" GridPane.rowIndex="2" />
+            <Label text="Editeur : " GridPane.rowIndex="3" />
+            <Label text="Annee :" GridPane.rowIndex="4" />
+            <TextField fx:id="txtISBN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtTitre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtEditeur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtAnnee" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Auteur :">
+                     <HBox.margin>
+                        <Insets left="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="cbAuteur" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#ajouterLivreC" prefWidth="72.0" text="Ajouter" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="190.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="210.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="168.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="322.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+</GridPane>
